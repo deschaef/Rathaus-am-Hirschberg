@@ -1,270 +1,758 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rathaus am Hirschberg – Schützenheim</title>
-  <meta name="description" content="Rathaus am Hirschberg – Schützenheim. Kein richtiges Rathaus, aber mit den wichtigsten Gesetzen.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Die offizielle, inoffizielle Webseite des Rathaus am Hirschberg – Schützenheim. Seriös im Auftritt, lustig im Betrieb." />
+  <link rel="preload" as="image" href="betrieb-rathaus-hirschberg.webp" type="image/webp" />
+  <link rel="icon" href="logo-rathaus-hirschberg.webp" type="image/webp" />
+
+  <style>
+    :root{
+      --green:#102c1d;
+      --green2:#193b27;
+      --gold:#b99b62;
+      --cream:#f5efe3;
+      --paper:#fffaf0;
+      --brown:#3b2a1a;
+      --text:#1b1b18;
+      --muted:#6c5b42;
+      --shadow:0 18px 45px rgba(0,0,0,.18);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(185,155,98,.18), transparent 32rem),
+        linear-gradient(180deg,var(--cream),#efe3cf);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    section{padding:74px 20px}
+    .container{width:min(1120px,100%);margin:auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(245,239,227,.96);
+      border-bottom:1px solid rgba(59,42,26,.16);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav{
+      width:min(1180px,100%);
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:10px 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--green);
+      min-width:0;
+    }
+
+    .brand img{
+      width:88px;
+      height:auto;
+      flex:0 0 auto;
+      filter:drop-shadow(0 5px 10px rgba(0,0,0,.08));
+    }
+
+    .brand-title{
+      font-weight:bold;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+
+    .brand-title small{
+      display:block;
+      font-size:.7rem;
+      color:var(--brown);
+      letter-spacing:.18em;
+      text-align:center;
+      margin-top:2px;
+    }
+
+    .links{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      font-size:.86rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .links a:not(.btn){
+      padding:8px 0;
+      border-bottom:2px solid transparent;
+    }
+
+    .links a:hover{
+      color:var(--gold);
+      border-color:var(--gold);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:var(--green);
+      color:var(--paper);
+      padding:11px 18px;
+      border-radius:4px;
+      border:1px solid var(--gold);
+      text-transform:uppercase;
+      font-size:.82rem;
+      letter-spacing:.08em;
+      box-shadow:0 3px 0 rgba(0,0,0,.16);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{background:var(--green2);transform:translateY(-1px)}
+    .btn.light{background:var(--paper);color:var(--green)}
+    .btn.light:hover{background:#f0dfbd}
+
+    .mobile-menu{
+      display:none;
+      position:relative;
+    }
+
+    .menu-toggle{
+      display:none;
+    }
+
+    .hamburger{
+      display:none;
+      padding:9px 12px;
+      border:1px solid rgba(59,42,26,.22);
+      border-radius:5px;
+      background:#fff8e8;
+      color:var(--green);
+      font-weight:bold;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+    }
+
+    .hero{
+      min-height:78vh;
+      min-height:78svh;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.18) 35%, rgba(0,0,0,.62)),
+        url("betrieb-rathaus-hirschberg.webp") center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      text-align:center;
+      color:var(--paper);
+      padding:110px 20px 58px;
+    }
+
+    .hero-card{
+      width:min(930px,100%);
+      background:linear-gradient(180deg,rgba(16,44,29,.82),rgba(8,24,15,.82));
+      border:1px solid rgba(185,155,98,.72);
+      padding:34px 30px;
+      box-shadow:0 18px 50px rgba(0,0,0,.38);
+      border-radius:6px;
+    }
+
+    .eyebrow{
+      margin:0 0 8px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--gold);
+      font-weight:bold;
+      font-size:.92rem;
+    }
+
+    h1,h2,h3{line-height:1.15;margin:0;color:inherit}
+    h1{
+      font-size:clamp(2.35rem,6vw,5.2rem);
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      text-wrap:balance;
+    }
+
+    .subtitle{
+      font-size:clamp(1.1rem,2.3vw,1.45rem);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin:.5rem 0 1rem;
+      color:#f0dfb6;
+    }
+
+    .hero p:last-child{
+      font-size:clamp(1rem,2vw,1.16rem);
+      margin:0 auto;
+      max-width:790px;
+      text-wrap:balance;
+    }
+
+    .quick-actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .intro{
+      text-align:center;
+      background:rgba(255,250,240,.76);
+      border-top:1px solid rgba(59,42,26,.12);
+      border-bottom:1px solid rgba(59,42,26,.12);
+    }
+
+    .intro h2,
+    .split h2,
+    .drinks h2{
+      color:var(--green);
+      font-size:clamp(2rem,4vw,3.5rem);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:14px;
+      text-wrap:balance;
+    }
+
+    .lead{
+      max-width:780px;
+      margin:0 auto;
+      font-size:1.1rem;
+      color:#3f3427;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:42px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(59,42,26,.18);
+      padding:28px 22px;
+      min-height:220px;
+      border-radius:8px;
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
+    }
+
+    .icon{font-size:2.35rem;margin-bottom:14px}
+    .card h3{
+      color:var(--green);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:1.05rem;
+      margin-bottom:10px;
+    }
+    .card p{margin:0;color:#4b3d2c}
+
+    .laws{
+      background:
+        radial-gradient(circle at 15% 20%, rgba(185,155,98,.16), transparent 22%),
+        radial-gradient(circle at 90% 85%, rgba(185,155,98,.13), transparent 20%),
+        linear-gradient(180deg,var(--green),#0a1b12);
+      color:var(--paper);
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:36px;
+    }
+
+    .section-title h2{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-size:clamp(1.75rem,3vw,2.75rem);
+      text-wrap:balance;
+    }
+
+    .section-title p{
+      margin:8px auto 0;
+      max-width:760px;
+      color:rgba(255,250,240,.82);
+    }
+
+    .law-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .law{
+      display:grid;
+      grid-template-columns:56px 1fr;
+      gap:16px;
+      padding:18px 0;
+      border-bottom:1px dashed rgba(185,155,98,.48);
+    }
+
+    .law-no{
+      color:var(--gold);
+      font-size:1.25rem;
+      font-weight:bold;
+    }
+
+    .law h3{
+      color:#f4dfad;
+      font-size:1.05rem;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:5px;
+    }
+
+    .law p{margin:0;color:rgba(255,250,240,.84)}
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:44px;
+      align-items:center;
+    }
+
+    .image-frame{
+      border:10px solid var(--paper);
+      box-shadow:var(--shadow);
+      border-radius:6px;
+      overflow:hidden;
+      background:var(--paper);
+    }
+
+    .split p{color:#3f3427;font-size:1.05rem}
+
+    .list{
+      list-style:none;
+      padding:0;
+      margin:24px 0;
+    }
+
+    .list li{
+      margin:11px 0;
+      padding-left:32px;
+      position:relative;
+    }
+
+    .list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:2px;
+      color:var(--green);
+      font-weight:bold;
+      border:1px solid var(--green);
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      text-align:center;
+      line-height:20px;
+      font-size:.78rem;
+    }
+
+    .drinks{
+      background:var(--paper);
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      border-radius:8px;
+      box-shadow:0 8px 25px rgba(0,0,0,.07);
+      border:1px solid rgba(59,42,26,.18);
+    }
+
+    .drink-table{
+      width:100%;
+      min-width:720px;
+      border-collapse:collapse;
+      background:#fffdf6;
+    }
+
+    .drink-table th,.drink-table td{
+      text-align:left;
+      padding:15px 14px;
+      border-bottom:1px solid rgba(59,42,26,.12);
+      vertical-align:top;
+    }
+
+    .drink-table th{
+      background:var(--green);
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.84rem;
+    }
+
+    .stamp{
+      margin:40px auto 0;
+      width:min(760px,100%);
+      border:2px dashed rgba(185,155,98,.75);
+      padding:20px;
+      text-align:center;
+      color:#4b3d2c;
+      background:rgba(185,155,98,.08);
+      border-radius:8px;
+      transform:rotate(-.4deg);
+    }
+
+    .contact{
+      background:
+        linear-gradient(135deg,rgba(16,44,29,.96),rgba(7,17,11,.97)),
+        url("logo-rathaus-hirschberg.webp") center/260px no-repeat;
+      color:var(--paper);
+      text-align:center;
+    }
+
+    .contact h2{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:clamp(1.8rem,4vw,2.5rem);
+      margin-bottom:12px;
+    }
+
+    .contact p{max-width:720px;margin:10px auto;color:rgba(255,250,240,.84)}
+    .contact .btn{margin-top:18px}
+
+
+    .impressum{
+      background:var(--paper);
+      color:var(--text);
+      text-align:center;
+      border-top:1px solid rgba(59,42,26,.15);
+      padding:58px 20px;
+    }
+    .impressum h2{
+      color:var(--green);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:clamp(1.6rem,3vw,2.2rem);
+      margin-bottom:14px;
+    }
+    .impressum p{
+      max-width:760px;
+      margin:10px auto;
+      color:#3f3427;
+    }
+    .impressum a{
+      color:var(--green);
+      text-decoration:underline;
+      font-weight:bold;
+    }
+    .impressum .small{
+      font-size:.92rem;
+      color:#6b5a42;
+      margin-top:20px;
+    }
+
+    footer{
+      background:#07110b;
+      color:rgba(255,250,240,.72);
+      text-align:center;
+      padding:26px 20px;
+      font-size:.9rem;
+    }
+
+    @media (max-width:980px){
+      .links{display:none}
+      .hamburger{display:inline-flex}
+      .mobile-menu{
+        display:block;
+      }
+      .mobile-panel{
+        display:none;
+        position:absolute;
+        right:0;
+        top:46px;
+        width:min(86vw,320px);
+        background:var(--paper);
+        border:1px solid rgba(59,42,26,.2);
+        border-radius:8px;
+        box-shadow:var(--shadow);
+        overflow:hidden;
+      }
+      .mobile-panel a{
+        display:block;
+        padding:15px 18px;
+        border-bottom:1px solid rgba(59,42,26,.12);
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        font-size:.9rem;
+        color:var(--green);
+      }
+      .mobile-panel a:last-child{border-bottom:0}
+      .menu-toggle:checked ~ .mobile-panel{display:block}
+
+      .cards{grid-template-columns:1fr 1fr}
+      .law-grid,.split{grid-template-columns:1fr}
+      .split .image-frame{order:-1}
+    }
+
+    @media (max-width:650px){
+      section{padding:56px 16px}
+      .nav{padding:8px 12px}
+      .brand{gap:9px}
+      .brand img{width:64px}
+      .brand-title{
+        font-size:.9rem;
+        letter-spacing:.04em;
+      }
+      .brand-title small{
+        font-size:.58rem;
+        letter-spacing:.12em;
+      }
+      .hamburger{
+        padding:8px 10px;
+        font-size:.76rem;
+      }
+
+      .hero{
+        min-height:78svh;
+        padding:90px 14px 24px;
+        background-position:center top;
+      }
+
+      .hero-card{
+        padding:22px 16px;
+        border-radius:8px;
+      }
+
+      .eyebrow{
+        font-size:.78rem;
+        letter-spacing:.14em;
+      }
+
+      h1{
+        font-size:2.2rem;
+        letter-spacing:.04em;
+      }
+
+      .subtitle{
+        font-size:.95rem;
+        letter-spacing:.12em;
+      }
+
+      .quick-actions .btn{
+        width:100%;
+        max-width:300px;
+      }
+
+      .cards{grid-template-columns:1fr}
+      .card{
+        min-height:auto;
+        padding:24px 20px;
+      }
+
+      .law{
+        grid-template-columns:46px 1fr;
+        gap:12px;
+        padding:16px 0;
+      }
+
+      .law h3{font-size:.96rem}
+      .law p{font-size:.95rem}
+
+      .image-frame{
+        border-width:6px;
+      }
+
+      .stamp{
+        padding:16px;
+        font-size:.95rem;
+      }
+    }
+
+    @media (max-width:380px){
+      .brand-title{display:none}
+      .brand img{width:70px}
+      h1{font-size:1.95rem}
+    }
+  </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="#start" aria-label="Zur Startseite">
-      <img src="assets/logo-rathaus.png" alt="Logo Rathaus am Hirschberg">
-      <span>
-        <strong>Rathaus am Hirschberg</strong>
-        <small>Schützenheim</small>
-      </span>
-    </a>
-
-    <input class="nav-check" type="checkbox" id="nav-check">
-    <label class="nav-button" for="nav-check">☰ Menü</label>
-
+  <header class="topbar">
     <nav class="nav">
-      <a href="#start">Start</a>
-      <a href="#ueber-uns">Über uns</a>
-      <a href="#gesetze">Gesetze</a>
-      <a href="#ratssitzungen">Ratssitzungen</a>
-      <a href="#getraenke">Getränke</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#impressum">Impressum</a>
+      <a class="brand" href="#home" aria-label="Zur Startseite">
+        <img src="logo-rathaus-hirschberg.webp" alt="Logo Rathaus am Hirschberg">
+        <span class="brand-title">Rathaus am Hirschberg <small>Schützenheim</small></span>
+      </a>
+
+      <div class="links">
+        <a href="#rathaus">Das Rathaus</a>
+        <a href="#gesetze">Gesetze</a>
+        <a href="#ratssitzungen">Ratssitzungen</a>
+        <a href="#getraenke">Getränkekammer</a>
+        <a href="#impressum">Impressum</a>
+        <a class="btn" href="#kontakt">Besuch anmelden</a>
+      </div>
+
+      <div class="mobile-menu">
+        <input class="menu-toggle" type="checkbox" id="menu-toggle" />
+        <label class="hamburger" for="menu-toggle">Menü</label>
+        <div class="mobile-panel">
+          <a href="#rathaus">Das Rathaus</a>
+          <a href="#gesetze">Gesetze</a>
+          <a href="#ratssitzungen">Ratssitzungen</a>
+          <a href="#getraenke">Getränkekammer</a>
+          <a href="#impressum">Impressum</a>
+          <a href="#kontakt">Besuch anmelden</a>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <main id="start">
+  <main id="home">
     <section class="hero">
       <div class="hero-card">
-        <p class="preline">Offiziell inoffiziell · Est. 2024</p>
+        <p class="eyebrow">Offiziell inoffiziell · Est. 2024</p>
         <h1>Rathaus am Hirschberg</h1>
-        <p class="subtitle">Schützenheim</p>
-        <p class="hero-text">
-          Kein richtiges Rathaus. Aber mit den wichtigsten Gesetzen,
-          ehrwürdiger Veranda und ausreichend Grundnahrungsmitteln
-          für sachliche Beschlüsse.
-        </p>
-        <div class="hero-actions">
+        <div class="subtitle">Schützenheim</div>
+        <p>Kein richtiges Rathaus. Aber mit den wichtigsten Gesetzen, ehrwürdiger Veranda, gepflegter Ratstradition und ausreichend Grundnahrungsmitteln für sachliche Beschlüsse.</p>
+        <div class="quick-actions">
           <a class="btn" href="#gesetze">Gesetze ansehen</a>
-          <a class="btn btn-light" href="#ratssitzungen">Ratssitzung</a>
+          <a class="btn light" href="#ratssitzungen">Ratssitzung</a>
         </div>
       </div>
     </section>
 
-    <section id="ueber-uns" class="section paper">
+    <section class="intro" id="rathaus">
       <div class="container">
-        <div class="section-head">
-          <span class="ornament">☙</span>
-          <h2>Willkommen im Rathaus</h2>
-          <p>
-            Das Rathaus am Hirschberg ist ein Ort der Gemeinschaft,
-            der gepflegten Beratung und der spontanen Amtsstunde am Hang.
-            Hier regieren Freundschaft, Respekt, Humor und gesunder Menschenverstand.
-          </p>
-        </div>
+        <h2>Willkommen im Rathaus</h2>
+        <p class="lead">Das Rathaus am Hirschberg ist ein Ort der Gemeinschaft, der gepflegten Beratung und der spontanen Amtsstunde am Hang. Hier regieren Freundschaft, Respekt, Humor und gesunder Menschenverstand.</p>
 
-        <div class="intro-layout">
-          <img class="round-image" src="assets/symbol-schaedel.jpg" alt="Schädel Symbol">
-          <div class="intro-copy">
-            <h3>Seriös im Auftritt, nicht ganz so ernst im Betrieb</h3>
-            <p>
-              Eigentlich handelt es sich um ein Garten-Grundstück mit schöner Hütte
-              und Veranda. Im Alltag trägt es jedoch den würdigen Namen
-              „Rathaus am Hirschberg“.
-            </p>
-            <p>
-              Die Amtsgeschäfte werden nach Wetterlage, Anwesenheit und Getränkestand
-              geregelt. Beschlüsse erfolgen mit Handschlag, Kopfnicken oder Nachschenken.
-            </p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🏡</div>
+            <h3>Über uns</h3>
+            <p>Ein Garten-Grundstück mit schöner Hütte, Veranda und großer Amtswürde.</p>
           </div>
-          <img class="round-image" src="assets/symbol-bier.jpg" alt="Bier Symbol">
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <img src="assets/symbol-gesetze.jpg" alt="Gesetze Symbol">
+          <div class="card">
+            <div class="icon">📜</div>
             <h3>Gesetze</h3>
-            <p>Amtlich verkündet, regelmäßig erweitert und grundsätzlich mit einem Augenzwinkern zu verstehen.</p>
-            <a href="#gesetze">Ansehen</a>
-          </article>
-
-          <article class="feature-card">
-            <img src="assets/symbol-lagerfeuer.jpg" alt="Lagerfeuer Symbol">
+            <p>Nicht im Bundesgesetzblatt, aber dafür im Herzen fest verankert.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔥</div>
             <h3>Ratssitzungen</h3>
             <p>Regelmäßig am Lagerfeuer. Tagesordnung: Bier kalt halten und Probleme warm lösen.</p>
-            <a href="#ratssitzungen">Ansehen</a>
-          </article>
-
-          <article class="feature-card">
-            <img src="assets/getraenkekammer.jpg" alt="Getränke auf Holztisch">
+          </div>
+          <div class="card">
+            <div class="icon">🍺</div>
             <h3>Getränkekammer</h3>
             <p>Die wichtigste Behörde des Hauses. Zuständig für Motivation und Diplomatie.</p>
-            <a href="#getraenke">Ansehen</a>
-          </article>
-
-          <article class="feature-card">
-            <img src="assets/veranda-abend.jpg" alt="Hütte mit Veranda am Abend">
-            <h3>Amtsstube</h3>
-            <p>Veranda, Hütte und Hanglage bilden den offiziellen Sitz der inoffiziellen Verwaltung.</p>
-            <a href="#galerie">Ansehen</a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="gesetze" class="section dark">
+    <section class="laws" id="gesetze">
       <div class="container">
-        <div class="section-head">
+        <div class="section-title">
           <h2>Gesetze des Rathaus am Hirschberg</h2>
-          <p>Nicht im Bundesgesetzblatt, aber dafür im Herzen fest verankert.</p>
+          <p>Amtlich verkündet, gelegentlich erweitert und grundsätzlich mit einem Augenzwinkern zu verstehen.</p>
         </div>
 
-        <div class="law-board">
-          <article class="law">
-            <span>§1</span>
-            <div>
-              <h3>Bier ist Grundnahrungsmittel</h3>
-              <p>Bier schützt vor Durst, schlechter Laune und trockenen Kehlen.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§2</span>
-            <div>
-              <h3>Williams Christ – heiliges Wasser</h3>
-              <p>Ein Williams belebt die Geister und fördert gute Ideen.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§3</span>
-            <div>
-              <h3>Obstler – für alle Fälle</h3>
-              <p>Obstler hilft immer: bei Kälte, bei Wärme, bei Freude und bei Leid.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§4</span>
-            <div>
-              <h3>Trollinger – der rote Freund</h3>
-              <p>Trollinger stärkt die Gemeinschaft und den Gesprächsfluss.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§5</span>
-            <div>
-              <h3>Lemberger – für stabile Entscheidungen</h3>
-              <p>Lemberger sorgt für Standhaftigkeit bei allen Abstimmungen.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§6</span>
-            <div>
-              <h3>Rosé – die farbige Verständigung</h3>
-              <p>Rosé ist die diplomatische Lösung in allen Fragen.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§7</span>
-            <div>
-              <h3>Weißherbst – klare Sache</h3>
-              <p>Weiß- oder Weißherbst bringt Klarheit in trübe Angelegenheiten.</p>
-            </div>
-          </article>
-
-          <article class="law">
-            <span>§8</span>
-            <div>
-              <h3>Nach 22 Uhr gelten Sondergesetze</h3>
-              <p>Ab 22 Uhr entscheidet nicht mehr der Kopf, sondern das Herz – und manchmal der Wirt.</p>
-            </div>
-          </article>
+        <div class="law-grid">
+          <div>
+            <article class="law"><div class="law-no">§1</div><div><h3>Bier ist Grundnahrungsmittel</h3><p>Bier schützt vor Durst, schlechter Laune und trockenen Kehlen.</p></div></article>
+            <article class="law"><div class="law-no">§2</div><div><h3>Williams Christ – heiliges Wasser</h3><p>Ein Williams belebt die Geister und fördert gute Ideen.</p></div></article>
+            <article class="law"><div class="law-no">§3</div><div><h3>Obstler – für alle Fälle</h3><p>Obstler hilft immer: bei Kälte, bei Wärme, bei Freude und bei Leid.</p></div></article>
+            <article class="law"><div class="law-no">§4</div><div><h3>Trollinger – der rote Freund</h3><p>Trollinger stärkt die Gemeinschaft und den Gesprächsfluss.</p></div></article>
+          </div>
+          <div>
+            <article class="law"><div class="law-no">§5</div><div><h3>Lemberger – für stabile Entscheidungen</h3><p>Lemberger sorgt für Standhaftigkeit bei allen Abstimmungen.</p></div></article>
+            <article class="law"><div class="law-no">§6</div><div><h3>Rosé – die farbige Verständigung</h3><p>Rosé ist die diplomatische Lösung in allen Fragen.</p></div></article>
+            <article class="law"><div class="law-no">§7</div><div><h3>Weißherbst – klare Sache</h3><p>Weiß- oder Weißherbst bringt Klarheit in trübe Angelegenheiten.</p></div></article>
+            <article class="law"><div class="law-no">§8</div><div><h3>Nach 22 Uhr gelten Sondergesetze</h3><p>Ab 22 Uhr entscheidet nicht mehr der Kopf, sondern das Herz – und manchmal der Wirt.</p></div></article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="ratssitzungen" class="section paper">
+    <section id="ratssitzungen">
       <div class="container split">
         <div class="image-frame">
-          <img src="assets/lagerfeuer-ratssitzung.jpg" alt="Ratssitzung am Lagerfeuer">
+          <img src="betrieb-rathaus-hirschberg.webp" alt="Ratsbetrieb am Hirschberg">
         </div>
-
-        <div class="split-text">
+        <div>
           <h2>Ratssitzungen am Lagerfeuer</h2>
-          <p>
-            Die Ratssitzungen finden regelmäßig und situationsabhängig am Lagerfeuer statt.
-            Anträge werden mündlich eingebracht, Beschlüsse per Zustimmung, Kopfnicken
-            oder Nachschenken gefasst.
-          </p>
-
-          <ul class="check-list">
+          <p>Die Ratssitzungen finden regelmäßig und situationsabhängig am Lagerfeuer statt. Anträge werden mündlich eingebracht, Beschlüsse per Zustimmung, Kopfnicken oder Nachschenken gefasst.</p>
+          <ul class="list">
             <li>Tagesordnung wird vor Ort beschlossen</li>
             <li>Alle Bürger haben Rederecht</li>
             <li>Entscheidungen sind bindend – mindestens bis zur nächsten Runde</li>
             <li>Protokoll wird meistens nicht geschrieben</li>
           </ul>
+          <a class="btn" href="#kontakt">Nächste Sitzung anfragen</a>
         </div>
       </div>
     </section>
 
-    <section id="getraenke" class="section drinks">
+    <section class="drinks" id="getraenke">
       <div class="container">
-        <div class="section-head">
+        <div class="section-title">
           <h2>Getränkekammer</h2>
-          <p>Die offizielle Übersicht der wichtigsten Amtsmittel.</p>
+          <p style="color:#5b4c38">Die offizielle Übersicht der wichtigsten Amtsmittel.</p>
         </div>
 
-        <div class="drink-layout">
-          <div class="image-frame">
-            <img src="assets/getraenkekammer.jpg" alt="Getränke und Kelche">
-          </div>
+        <div class="table-wrap">
+          <table class="drink-table">
+            <thead>
+              <tr>
+                <th>Getränk</th>
+                <th>Amtliche Funktion</th>
+                <th>Empfohlene Anwendung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Bier</td><td>Grundversorgung</td><td>Bei Ankunft, Sitzung und Feierabend</td></tr>
+              <tr><td>Williams Christ</td><td>Geistige Erhellung</td><td>Nach Beschlussfassung</td></tr>
+              <tr><td>Obstler</td><td>Universalmittel</td><td>Bei jeder Wetterlage</td></tr>
+              <tr><td>Trollinger</td><td>Gemeinschaftspflege</td><td>Zu ernsten Gesprächen</td></tr>
+              <tr><td>Lemberger</td><td>Standhaftigkeit</td><td>Bei schwierigen Entscheidungen</td></tr>
+              <tr><td>Rosé</td><td>Diplomatie</td><td>Wenn keiner streiten will</td></tr>
+              <tr><td>Weißherbst</td><td>Klarstellung</td><td>Bei unklarer Lage</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div class="drink-grid">
-            <article><strong>Bier</strong><span>Grundversorgung bei Ankunft, Sitzung und Feierabend.</span></article>
-            <article><strong>Williams Christ</strong><span>Geistige Erhellung nach Beschlussfassung.</span></article>
-            <article><strong>Obstler</strong><span>Universalmittel bei jeder Wetterlage.</span></article>
-            <article><strong>Trollinger</strong><span>Gemeinschaftspflege und Gesprächsfluss.</span></article>
-            <article><strong>Lemberger</strong><span>Standhaftigkeit bei schwierigen Entscheidungen.</span></article>
-            <article><strong>Rosé</strong><span>Diplomatie, wenn keiner streiten will.</span></article>
-            <article><strong>Weißherbst</strong><span>Klarstellung bei unklarer Lage.</span></article>
-          </div>
+        <div class="stamp">
+          <strong>Amtlicher Hinweis:</strong> Der Getränkestand ist regelmäßig zu prüfen. Bei niedrigem Bestand ist unverzüglich der zuständige Beschaffungsrat zu informieren.
         </div>
       </div>
     </section>
 
-    <section id="galerie" class="section paper">
+    <section class="contact" id="kontakt">
       <div class="container">
-        <div class="section-head">
-          <h2>Einblicke in unser Revier</h2>
-          <p>Bilder ohne eingebauten Text – der Text liegt sauber in der Webseite.</p>
-        </div>
-
-        <div class="gallery">
-          <figure>
-            <img src="assets/hero-huette.jpg" alt="Hütte am Hirschberg">
-            <figcaption>Hütte am Hirschberg</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/veranda-abend.jpg" alt="Veranda am Abend">
-            <figcaption>Amtsstube bei Abendlicht</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/lagerfeuer-ratssitzung.jpg" alt="Lagerfeuer">
-            <figcaption>Ratssitzung am Feuer</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/baertige-ratsherren.jpg" alt="Bärtige Ratsherren">
-            <figcaption>Ratsherren mit Amtswürde</figcaption>
-          </figure>
-        </div>
+        <h2>Besuch anmelden</h2>
+        <p>Amtsstunden nach Wetterlage, Anwesenheit und Getränkestand.</p>
+        <p><strong>Rathaus am Hirschberg · Schützenheim</strong><br>Veranda, Lagerfeuerplatz und Sitzungsgelände</p>
+        <a class="btn" href="mailto:matthias.schaedel@gmail.com?subject=Besuchsanfrage Rathaus am Hirschberg">Besuch per Mail anfragen</a>
       </div>
     </section>
 
-    <section id="impressum" class="section imprint">
-      <div class="container narrow">
+    <section class="impressum" id="impressum">
+      <div class="container">
         <h2>Impressum</h2>
         <p><strong>Angaben gemäß § 5 TMG</strong></p>
         <p>
@@ -274,21 +762,17 @@
           Deutschland
         </p>
         <p>
-          E-Mail:
-          <a href="mailto:matthias.schaedel@gmail.com">matthias.schaedel@gmail.com</a>
+          E-Mail: <a href="mailto:matthias.schaedel@gmail.com">matthias.schaedel@gmail.com</a>
         </p>
         <p class="small">
-          Hinweis: Diese Webseite ist ein privates Spaßprojekt.
-          Das „Rathaus am Hirschberg“ ist kein offizielles Rathaus
-          und keine öffentliche Behörde.
+          Hinweis: Diese Webseite ist ein privates Spaßprojekt. Das „Rathaus am Hirschberg“ ist kein offizielles Rathaus und keine öffentliche Behörde.
         </p>
-        <a class="btn btn-light" href="#start">Nach oben</a>
       </div>
     </section>
   </main>
 
   <footer>
-    Rathaus am Hirschberg · Schützenheim · Offiziell inoffiziell
+    © Rathaus am Hirschberg – Schützenheim · Est. 2024 · Amtlich inoffiziell · Kontakt: matthias.schaedel@gmail.com
   </footer>
 </body>
 </html>
