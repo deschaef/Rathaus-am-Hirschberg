@@ -1,0 +1,8 @@
+body{margin:0;font-family:Georgia,serif;background:#f5efe3;color:#1b1b18}
+header{background:#102c1d;color:#fff;padding:10px}
+nav{display:flex;justify-content:space-between;align-items:center}
+nav a{color:#fff;margin:0 10px;text-decoration:none}
+.container{padding:20px}
+.hero{background:url('hero.png') center/cover;height:50vh;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+.card{background:#fff;padding:15px;margin:10px 0;border-radius:6px}
+@media(max-width:600px){nav{flex-direction:column}}
