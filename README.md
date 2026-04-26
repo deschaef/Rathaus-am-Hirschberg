@@ -1,16 +1,18 @@
-# Rathaus am Hirschberg – Webseite
+# Rathaus am Hirschberg – Teil 2
 
-Fertige statische Webseite für GitHub Pages, Netlify oder Cloudflare Pages.
+Diese ZIP enthält:
+- index.html
+- style.css
 
-## Hochladen auf GitHub Pages
+Zusammen mit Teil 1 muss die GitHub-Struktur so aussehen:
 
-1. ZIP entpacken.
-2. Neues GitHub Repository erstellen, z. B. `rathaus-am-hirschberg`.
-3. Alle Dateien aus diesem Ordner hochladen:
-   - `index.html`
-   - `style.css`
-   - Ordner `assets`
-4. In GitHub: Settings → Pages → Branch `main` auswählen → Save.
-5. Nach kurzer Zeit ist die Seite online.
+index.html
+style.css
+assets/
+  logo-rathaus.png
+  hero-huette.jpg
+  lagerfeuer-ratssitzung.jpg
+  getraenkekammer.jpg
+  usw.
 
-Die Webseite ist eine einseitige Seite. Die Navigation springt nur zu Bereichen weiter unten.
+Wichtig: Die ZIPs zuerst entpacken, dann Dateien hochladen – nicht die ZIP selbst hochladen.

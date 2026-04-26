@@ -1,47 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rathaus am Hirschberg</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rathaus am Hirschberg – Schützenheim</title>
+  <meta name="description" content="Rathaus am Hirschberg – Schützenheim. Kein richtiges Rathaus, aber mit den wichtigsten Gesetzen.">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header class="site-header">
+    <a class="brand" href="#start" aria-label="Zur Startseite">
+      <img src="assets/logo-rathaus.png" alt="Logo Rathaus am Hirschberg">
+      <span>
+        <strong>Rathaus am Hirschberg</strong>
+        <small>Schützenheim</small>
+      </span>
+    </a>
 
-<header>
-  <div class="logo">Rathaus am Hirschberg</div>
-  <nav>
-    <a href="#start">Start</a>
-    <a href="#gesetze">Gesetze</a>
-    <a href="#rat">Ratssitzungen</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-</header>
+    <input class="nav-check" type="checkbox" id="nav-check">
+    <label class="nav-button" for="nav-check">☰ Menü</label>
 
-<section id="start" class="hero">
-  <h1>Rathaus am Hirschberg</h1>
-  <p>Kein richtiges Rathaus. Aber ein verdammt gutes.</p>
-</section>
+    <nav class="nav">
+      <a href="#start">Start</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#gesetze">Gesetze</a>
+      <a href="#ratssitzungen">Ratssitzungen</a>
+      <a href="#getraenke">Getränke</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#impressum">Impressum</a>
+    </nav>
+  </header>
 
-<section id="gesetze" class="section">
-  <h2>Gesetze</h2>
-  <ul>
-    <li>Bier ist Grundnahrungsmittel</li>
-    <li>Williams ist heilig</li>
-    <li>Nach 22 Uhr gelten Sonderregeln</li>
-  </ul>
-</section>
+  <main id="start">
+    <section class="hero">
+      <div class="hero-card">
+        <p class="preline">Offiziell inoffiziell · Est. 2024</p>
+        <h1>Rathaus am Hirschberg</h1>
+        <p class="subtitle">Schützenheim</p>
+        <p class="hero-text">
+          Kein richtiges Rathaus. Aber mit den wichtigsten Gesetzen,
+          ehrwürdiger Veranda und ausreichend Grundnahrungsmitteln
+          für sachliche Beschlüsse.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#gesetze">Gesetze ansehen</a>
+          <a class="btn btn-light" href="#ratssitzungen">Ratssitzung</a>
+        </div>
+      </div>
+    </section>
 
-<section id="rat" class="section">
-  <h2>Ratssitzungen</h2>
-  <img src="lagerfeuer.jpg">
-  <p>Am Lagerfeuer mit Bier.</p>
-</section>
+    <section id="ueber-uns" class="section paper">
+      <div class="container">
+        <div class="section-head">
+          <span class="ornament">☙</span>
+          <h2>Willkommen im Rathaus</h2>
+          <p>
+            Das Rathaus am Hirschberg ist ein Ort der Gemeinschaft,
+            der gepflegten Beratung und der spontanen Amtsstunde am Hang.
+            Hier regieren Freundschaft, Respekt, Humor und gesunder Menschenverstand.
+          </p>
+        </div>
 
-<section id="kontakt" class="section">
-  <h2>Impressum</h2>
-  <p>Matthias Schädel<br>Hirschberg 1<br>74182 Obersulm</p>
-</section>
+        <div class="intro-layout">
+          <img class="round-image" src="assets/symbol-schaedel.jpg" alt="Schädel Symbol">
+          <div class="intro-copy">
+            <h3>Seriös im Auftritt, nicht ganz so ernst im Betrieb</h3>
+            <p>
+              Eigentlich handelt es sich um ein Garten-Grundstück mit schöner Hütte
+              und Veranda. Im Alltag trägt es jedoch den würdigen Namen
+              „Rathaus am Hirschberg“.
+            </p>
+            <p>
+              Die Amtsgeschäfte werden nach Wetterlage, Anwesenheit und Getränkestand
+              geregelt. Beschlüsse erfolgen mit Handschlag, Kopfnicken oder Nachschenken.
+            </p>
+          </div>
+          <img class="round-image" src="assets/symbol-bier.jpg" alt="Bier Symbol">
+        </div>
 
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img src="assets/symbol-gesetze.jpg" alt="Gesetze Symbol">
+            <h3>Gesetze</h3>
+            <p>Amtlich verkündet, regelmäßig erweitert und grundsätzlich mit einem Augenzwinkern zu verstehen.</p>
+            <a href="#gesetze">Ansehen</a>
+          </article>
+
+          <article class="feature-card">
+            <img src="assets/symbol-lagerfeuer.jpg" alt="Lagerfeuer Symbol">
+            <h3>Ratssitzungen</h3>
+            <p>Regelmäßig am Lagerfeuer. Tagesordnung: Bier kalt halten und Probleme warm lösen.</p>
+            <a href="#ratssitzungen">Ansehen</a>
+          </article>
+
+          <article class="feature-card">
+            <img src="assets/getraenkekammer.jpg" alt="Getränke auf Holztisch">
+            <h3>Getränkekammer</h3>
+            <p>Die wichtigste Behörde des Hauses. Zuständig für Motivation und Diplomatie.</p>
+            <a href="#getraenke">Ansehen</a>
+          </article>
+
+          <article class="feature-card">
+            <img src="assets/veranda-abend.jpg" alt="Hütte mit Veranda am Abend">
+            <h3>Amtsstube</h3>
+            <p>Veranda, Hütte und Hanglage bilden den offiziellen Sitz der inoffiziellen Verwaltung.</p>
+            <a href="#galerie">Ansehen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gesetze" class="section dark">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gesetze des Rathaus am Hirschberg</h2>
+          <p>Nicht im Bundesgesetzblatt, aber dafür im Herzen fest verankert.</p>
+        </div>
+
+        <div class="law-board">
+          <article class="law">
+            <span>§1</span>
+            <div>
+              <h3>Bier ist Grundnahrungsmittel</h3>
+              <p>Bier schützt vor Durst, schlechter Laune und trockenen Kehlen.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§2</span>
+            <div>
+              <h3>Williams Christ – heiliges Wasser</h3>
+              <p>Ein Williams belebt die Geister und fördert gute Ideen.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§3</span>
+            <div>
+              <h3>Obstler – für alle Fälle</h3>
+              <p>Obstler hilft immer: bei Kälte, bei Wärme, bei Freude und bei Leid.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§4</span>
+            <div>
+              <h3>Trollinger – der rote Freund</h3>
+              <p>Trollinger stärkt die Gemeinschaft und den Gesprächsfluss.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§5</span>
+            <div>
+              <h3>Lemberger – für stabile Entscheidungen</h3>
+              <p>Lemberger sorgt für Standhaftigkeit bei allen Abstimmungen.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§6</span>
+            <div>
+              <h3>Rosé – die farbige Verständigung</h3>
+              <p>Rosé ist die diplomatische Lösung in allen Fragen.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§7</span>
+            <div>
+              <h3>Weißherbst – klare Sache</h3>
+              <p>Weiß- oder Weißherbst bringt Klarheit in trübe Angelegenheiten.</p>
+            </div>
+          </article>
+
+          <article class="law">
+            <span>§8</span>
+            <div>
+              <h3>Nach 22 Uhr gelten Sondergesetze</h3>
+              <p>Ab 22 Uhr entscheidet nicht mehr der Kopf, sondern das Herz – und manchmal der Wirt.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ratssitzungen" class="section paper">
+      <div class="container split">
+        <div class="image-frame">
+          <img src="assets/lagerfeuer-ratssitzung.jpg" alt="Ratssitzung am Lagerfeuer">
+        </div>
+
+        <div class="split-text">
+          <h2>Ratssitzungen am Lagerfeuer</h2>
+          <p>
+            Die Ratssitzungen finden regelmäßig und situationsabhängig am Lagerfeuer statt.
+            Anträge werden mündlich eingebracht, Beschlüsse per Zustimmung, Kopfnicken
+            oder Nachschenken gefasst.
+          </p>
+
+          <ul class="check-list">
+            <li>Tagesordnung wird vor Ort beschlossen</li>
+            <li>Alle Bürger haben Rederecht</li>
+            <li>Entscheidungen sind bindend – mindestens bis zur nächsten Runde</li>
+            <li>Protokoll wird meistens nicht geschrieben</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="getraenke" class="section drinks">
+      <div class="container">
+        <div class="section-head">
+          <h2>Getränkekammer</h2>
+          <p>Die offizielle Übersicht der wichtigsten Amtsmittel.</p>
+        </div>
+
+        <div class="drink-layout">
+          <div class="image-frame">
+            <img src="assets/getraenkekammer.jpg" alt="Getränke und Kelche">
+          </div>
+
+          <div class="drink-grid">
+            <article><strong>Bier</strong><span>Grundversorgung bei Ankunft, Sitzung und Feierabend.</span></article>
+            <article><strong>Williams Christ</strong><span>Geistige Erhellung nach Beschlussfassung.</span></article>
+            <article><strong>Obstler</strong><span>Universalmittel bei jeder Wetterlage.</span></article>
+            <article><strong>Trollinger</strong><span>Gemeinschaftspflege und Gesprächsfluss.</span></article>
+            <article><strong>Lemberger</strong><span>Standhaftigkeit bei schwierigen Entscheidungen.</span></article>
+            <article><strong>Rosé</strong><span>Diplomatie, wenn keiner streiten will.</span></article>
+            <article><strong>Weißherbst</strong><span>Klarstellung bei unklarer Lage.</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="section paper">
+      <div class="container">
+        <div class="section-head">
+          <h2>Einblicke in unser Revier</h2>
+          <p>Bilder ohne eingebauten Text – der Text liegt sauber in der Webseite.</p>
+        </div>
+
+        <div class="gallery">
+          <figure>
+            <img src="assets/hero-huette.jpg" alt="Hütte am Hirschberg">
+            <figcaption>Hütte am Hirschberg</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/veranda-abend.jpg" alt="Veranda am Abend">
+            <figcaption>Amtsstube bei Abendlicht</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lagerfeuer-ratssitzung.jpg" alt="Lagerfeuer">
+            <figcaption>Ratssitzung am Feuer</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/baertige-ratsherren.jpg" alt="Bärtige Ratsherren">
+            <figcaption>Ratsherren mit Amtswürde</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="impressum" class="section imprint">
+      <div class="container narrow">
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p>
+          Matthias Schädel<br>
+          Hirschberg 1<br>
+          74182 Obersulm<br>
+          Deutschland
+        </p>
+        <p>
+          E-Mail:
+          <a href="mailto:matthias.schaedel@gmail.com">matthias.schaedel@gmail.com</a>
+        </p>
+        <p class="small">
+          Hinweis: Diese Webseite ist ein privates Spaßprojekt.
+          Das „Rathaus am Hirschberg“ ist kein offizielles Rathaus
+          und keine öffentliche Behörde.
+        </p>
+        <a class="btn btn-light" href="#start">Nach oben</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Rathaus am Hirschberg · Schützenheim · Offiziell inoffiziell
+  </footer>
 </body>
 </html>
