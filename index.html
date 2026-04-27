@@ -503,6 +503,63 @@
       font-size:.9rem;
     }
 
+
+    /* Laptop-Fix: verhindert Überlagerung von Logo/Titel und Navigation */
+    @media (max-width:1500px){
+      .nav{
+        gap:10px;
+      }
+      .brand img{
+        width:70px;
+      }
+      .brand-title{
+        font-size:.92rem;
+        max-width:260px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .links{
+        gap:10px;
+        font-size:.72rem;
+        letter-spacing:.045em;
+      }
+      .btn{
+        padding:9px 11px;
+        font-size:.74rem;
+      }
+    }
+
+    /* Bei normalen Laptopbreiten: Menü als Button anzeigen statt zu überlappen */
+    @media (max-width:1320px){
+      .links{display:none}
+      .hamburger{display:inline-flex}
+      .mobile-menu{display:block}
+      .mobile-panel{
+        display:none;
+        position:absolute;
+        right:0;
+        top:46px;
+        width:min(88vw,340px);
+        max-height:calc(100vh - 80px);
+        overflow:auto;
+        background:var(--paper);
+        border:1px solid rgba(59,42,26,.2);
+        border-radius:8px;
+        box-shadow:var(--shadow);
+      }
+      .mobile-panel a{
+        display:block;
+        padding:15px 18px;
+        border-bottom:1px solid rgba(59,42,26,.12);
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        font-size:.9rem;
+        color:var(--green);
+      }
+      .mobile-panel a:last-child{border-bottom:0}
+      .menu-toggle:checked ~ .mobile-panel{display:block}
+    }
+
     @media (max-width:1180px){
       .links{display:none}
       .hamburger{display:inline-flex}
