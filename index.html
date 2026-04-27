@@ -676,6 +676,65 @@
       .brand img{width:70px}
       h1{font-size:1.95rem}
     }
+
+    /* Final: Navigation auf PC/Laptop/Handy als Dropdown-Menü */
+    .links{
+      display:none !important;
+    }
+    .mobile-menu{
+      display:block !important;
+      position:relative;
+    }
+    .hamburger{
+      display:inline-flex !important;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border:1px solid rgba(59,42,26,.22);
+      border-radius:5px;
+      background:#fff8e8;
+      color:var(--green);
+      font-weight:bold;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.82rem;
+      cursor:pointer;
+      user-select:none;
+    }
+    .mobile-panel{
+      display:none;
+      position:absolute;
+      right:0;
+      top:48px;
+      width:min(88vw,360px);
+      max-height:calc(100vh - 90px);
+      overflow:auto;
+      background:var(--paper);
+      border:1px solid rgba(59,42,26,.2);
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      z-index:999;
+    }
+    .mobile-panel a{
+      display:block;
+      padding:15px 18px;
+      border-bottom:1px solid rgba(59,42,26,.12);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.9rem;
+      color:var(--green);
+    }
+    .mobile-panel a:hover{
+      background:rgba(185,155,98,.12);
+      color:var(--brown);
+    }
+    .mobile-panel a:last-child{
+      border-bottom:0;
+    }
+    .menu-toggle:checked ~ .mobile-panel{
+      display:block;
+    }
+
   </style>
 </head>
 
@@ -991,6 +1050,34 @@
         link.addEventListener('click', function () {
           if (toggle) toggle.checked = false;
         });
+      });
+    });
+  </script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.getElementById('menu-toggle');
+      var panel = document.querySelector('.mobile-panel');
+      var button = document.querySelector('.hamburger');
+
+      document.querySelectorAll('.mobile-panel a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (toggle) toggle.checked = false;
+        });
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!toggle || !panel || !button) return;
+        if (!panel.contains(event.target) && !button.contains(event.target) && event.target !== toggle) {
+          toggle.checked = false;
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && toggle) {
+          toggle.checked = false;
+        }
       });
     });
   </script>
