@@ -823,6 +823,29 @@
   }
 }
 
+
+/* Bild des Rates am Hirschberg */
+.rat-image-frame{
+  width:min(980px,100%);
+  margin:0 auto 34px;
+  border:10px solid var(--paper);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:var(--paper);
+}
+.rat-image-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+@media(max-width:650px){
+  .rat-image-frame{
+    border-width:6px;
+    margin-bottom:26px;
+  }
+}
+
 </style>
 </head>
 
@@ -914,6 +937,8 @@
       <div class="container">
         <h2>Der Rat am Hirschberg</h2>
         <p class="extra-subtitle">Zwischen Veranda, Lagerfeuer und gepflegter Getränkekultur lenkt dieser Kreis die Geschicke des inoffiziell offiziellen Rathauses.</p>
+        <div class="rat-image-frame"><img src="ratsmitglieder-hirschberg.png" alt="Der Rat am Hirschberg auf der Veranda"></div>
+
         <div class="team-grid">
           <article class="team-card"><div class="team-avatar">👑</div><h3>Marcus</h3><p class="team-role">Bürgermeister</p><p>Wenn es am Hirschberg ein letztes Wort gibt, dann kommt es meist von Marcus. Er wacht über Ordnung, Zusammenhalt und die Stimmungslage – vorausgesetzt, das Glas ist nicht leer.</p></article>
           <article class="team-card"><div class="team-avatar">🍷</div><h3>Claudia</h3><p class="team-role">Ministerin für gute Laune</p><p>Mit feinem Gespür für Stimmung und dem richtigen Getränk zur richtigen Zeit sorgt Claudia dafür, dass aus hitzigen Gesprächen wieder gesellige Runden werden.</p></article>
