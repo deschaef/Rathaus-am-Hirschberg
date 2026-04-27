@@ -464,6 +464,36 @@
       margin-top:20px;
     }
 
+
+    .extra-section{background:var(--paper);color:var(--text);border-top:1px solid rgba(59,42,26,.15);border-bottom:1px solid rgba(59,42,26,.12)}
+    .extra-section.dark{background:linear-gradient(135deg,rgba(16,44,29,.96),rgba(7,17,11,.97));color:var(--paper)}
+    .extra-section.dark h2{color:var(--gold)}
+    .extra-subtitle{max-width:820px;margin:8px auto 36px;text-align:center;color:#4b3d2c;font-size:1.05rem}
+    .extra-section.dark .extra-subtitle{color:rgba(255,250,240,.82)}
+    .team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:34px}
+    .team-card,.info-card,.protocol-card{background:rgba(255,255,255,.62);border:1px solid rgba(59,42,26,.18);border-radius:9px;padding:22px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .team-avatar{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:var(--green);color:var(--gold);font-size:2rem;border:1px solid var(--gold)}
+    .team-card h3,.info-card h3,.protocol-card h3{color:var(--green);font-size:1.05rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+    .team-role{color:var(--gold);font-weight:bold;margin:0 0 12px;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+    .team-card p:last-child,.info-card p,.protocol-card p{color:#4b3d2c;margin:0;font-size:.95rem}
+    .prayer-box{width:min(760px,100%);margin:0 auto;padding:34px 26px;border:2px solid rgba(185,155,98,.65);outline:1px solid rgba(59,42,26,.16);outline-offset:-8px;background:rgba(255,255,255,.38);text-align:center;box-shadow:0 12px 30px rgba(0,0,0,.07);border-radius:8px}
+    .prayer-box p{margin:8px auto;color:#3f3427;font-size:1.08rem}
+    .prayer-box .amen{margin-top:18px;color:var(--green);font-weight:bold;text-transform:uppercase;letter-spacing:.14em}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .status-card{background:rgba(255,250,240,.08);border:1px solid rgba(185,155,98,.45);border-radius:9px;padding:22px;text-align:center}
+    .status-icon{font-size:2.2rem;margin-bottom:8px}
+    .status-card h3{color:#f4dfad;text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin-bottom:12px}
+    .status-bar{height:12px;border-radius:99px;background:rgba(255,250,240,.18);overflow:hidden;margin:10px 0}
+    .status-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#f4dfad);border-radius:99px}
+    .status-card p{color:rgba(255,250,240,.82);margin:8px 0 0;font-size:.94rem}
+    .protocol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .protocol-meta{display:inline-block;margin-bottom:12px;padding:5px 10px;border:1px solid rgba(185,155,98,.65);color:var(--gold);background:rgba(185,155,98,.08);border-radius:99px;font-size:.82rem;font-weight:bold}
+    .notice-card{border-left:5px solid var(--gold)}
+    .seal-note{margin:34px auto 0;width:min(760px,100%);border:2px dashed rgba(185,155,98,.75);padding:20px;text-align:center;color:#4b3d2c;background:rgba(185,155,98,.08);border-radius:8px;transform:rotate(-.3deg)}
+    @media(max-width:980px){.team-grid{grid-template-columns:1fr 1fr}.team-card:last-child{grid-column:1/-1}.info-grid,.protocol-grid{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:650px){.team-grid,.status-grid{grid-template-columns:1fr}.prayer-box{padding:28px 18px}.prayer-box p{font-size:1rem}}
+
     footer{
       background:#07110b;
       color:rgba(255,250,240,.72);
@@ -601,7 +631,9 @@
         <a href="#rathaus">Das Rathaus</a>
         <a href="#gesetze">Gesetze</a>
         <a href="#ratssitzungen">Ratssitzungen</a>
+        <a href="#rat">Der Rat</a>
         <a href="#getraenke">Getränkekammer</a>
+        <a href="#getraenkestand">Stand</a>
         <a href="#impressum">Impressum</a>
         <a class="btn" href="#kontakt">Besuch anmelden</a>
       </div>
@@ -613,6 +645,11 @@
           <a href="#rathaus">Das Rathaus</a>
           <a href="#gesetze">Gesetze</a>
           <a href="#ratssitzungen">Ratssitzungen</a>
+          <a href="#rat">Der Rat</a>
+          <a href="#vaterunser">Vaterunser</a>
+          <a href="#amtszeiten">Amtszeiten</a>
+          <a href="#bekanntmachungen">Bekanntmachungen</a>
+          <a href="#notfallplan">Notfallplan</a>
           <a href="#getraenke">Getränkekammer</a>
           <a href="#impressum">Impressum</a>
           <a href="#kontakt">Besuch anmelden</a>
@@ -665,10 +702,47 @@
       </div>
     </section>
 
+
+    <section class="extra-section" id="rat">
+      <div class="container">
+        <h2>Der Rat am Hirschberg</h2>
+        <p class="extra-subtitle">Zwischen Veranda, Lagerfeuer und gepflegter Getränkekultur lenkt dieser Kreis die Geschicke des inoffiziell offiziellen Rathauses.</p>
+        <div class="team-grid">
+          <article class="team-card"><div class="team-avatar">👑</div><h3>Marcus</h3><p class="team-role">Bürgermeister</p><p>Wenn es am Hirschberg ein letztes Wort gibt, dann kommt es meist von Marcus. Er wacht über Ordnung, Zusammenhalt und die Stimmungslage – vorausgesetzt, das Glas ist nicht leer.</p></article>
+          <article class="team-card"><div class="team-avatar">🍷</div><h3>Claudia</h3><p class="team-role">Ministerin für gute Laune</p><p>Mit feinem Gespür für Stimmung und dem richtigen Getränk zur richtigen Zeit sorgt Claudia dafür, dass aus hitzigen Gesprächen wieder gesellige Runden werden.</p></article>
+          <article class="team-card"><div class="team-avatar">🧔</div><h3>Roland</h3><p class="team-role">Weiser Ältester</p><p>Roland ist die ruhige Konstante in einem System, das selten ruhig ist. Er wird gefragt, wenn keiner weiter weiß – oder alle glauben, sie wüssten es besser.</p></article>
+          <article class="team-card"><div class="team-avatar">📜</div><h3>Matthias</h3><p class="team-role">Amtsleiter</p><p>Gesellig, trinkfest und selten allein anzutreffen. Matthias gehört fest zum Inventar des Hirschbergs und kümmert sich um alles, was organisiert werden sollte – und vieles, was einfach passiert.</p></article>
+          <article class="team-card"><div class="team-avatar">🐕</div><h3>Kira</h3><p class="team-role">Sicherheitsbeauftragte</p><p>Kira hat alles im Blick. Besucher, Bewegungen und Grillgut werden kontrolliert. Unbestechlich ist sie nicht – außer vielleicht unter ganz bestimmten Bedingungen.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="vaterunser">
+      <div class="container">
+        <h2>Das Hirschberger Vaterunser</h2>
+        <p class="extra-subtitle">Feierlich vorzutragen bei besonderen Ratssitzungen, niedrigem Getränkestand oder überraschend guter Stimmung.</p>
+        <div class="prayer-box">
+          <p><strong>Unser Rathaus am Hirschberg,</strong></p><p>geheiligt werde dein Lagerfeuer.</p><p>Deine Sitzung komme, dein Beschluss geschehe,</p><p>wie auf der Veranda, so auch am Grill.</p><p>Unser tägliches Bier gib uns heute,</p><p>und vergib uns unsere Beschlüsse,</p><p>wie auch wir vergeben denen, die noch nichts nachgelegt haben.</p><p>Und führe uns nicht in leere Gläser,</p><p>sondern erlöse uns von schlechter Laune.</p><p>Denn dein ist die Veranda, die Glut und die Geselligkeit.</p><p class="amen">In Ewigkeit. Prost.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="amtszeiten">
+      <div class="container">
+        <h2>Amtszeiten</h2>
+        <p class="extra-subtitle">Die Öffnungszeiten richten sich nach Wetterlage, Anwesenheit, Vorrat und spontaner Beschlussfähigkeit.</p>
+        <div class="info-grid">
+          <article class="info-card"><h3>Freitag</h3><p>Ab Sonnenuntergang bis „nur noch eins“ mehrfach widerlegt wurde.</p></article>
+          <article class="info-card"><h3>Samstag</h3><p>Ganztägige Bereitschaft bei gutem Wetter, Grillduft oder sichtbarer Rauchentwicklung.</p></article>
+          <article class="info-card"><h3>Sonntag</h3><p>Nachbesprechung, Aufräumprüfung und stille Auswertung vergangener Beschlüsse.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="laws" id="gesetze">
       <div class="container">
         <div class="section-title">
-          <h2>Gesetze des Rathaus am Hirschberg</h2>
+          <h2>Erweiterte Gesetzestafel</h2>
           <p>Amtlich verkündet, gelegentlich erweitert und grundsätzlich mit einem Augenzwinkern zu verstehen.</p>
         </div>
 
@@ -684,6 +758,18 @@
             <article class="law"><div class="law-no">§6</div><div><h3>Rosé – die farbige Verständigung</h3><p>Rosé ist die diplomatische Lösung in allen Fragen.</p></div></article>
             <article class="law"><div class="law-no">§7</div><div><h3>Weißherbst – klare Sache</h3><p>Weiß- oder Weißherbst bringt Klarheit in trübe Angelegenheiten.</p></div></article>
             <article class="law"><div class="law-no">§8</div><div><h3>Nach 22 Uhr gelten Sondergesetze</h3><p>Ab 22 Uhr entscheidet nicht mehr der Kopf, sondern das Herz – und manchmal der Wirt.</p></div></article>
+            <article class="law"><div class="law-no">§9</div><div><h3>Wer kommt, kommt nicht mit leeren Händen</h3><p>Ein Gastbeitrag zum Gemeinwohl ist stets willkommen.</p></div></article>
+            <article class="law"><div class="law-no">§10</div><div><h3>Der Grillmeister hat Recht</h3><p>Widerspruch ist möglich, aber nur mit triftigem Getränkebeweis.</p></div></article>
+            <article class="law"><div class="law-no">§11</div><div><h3>Die Veranda ist neutraler Boden</h3><p>Auf der Veranda werden Streitigkeiten beigelegt, nicht begonnen.</p></div></article>
+            <article class="law"><div class="law-no">§12</div><div><h3>Leere Gläser sind meldepflichtig</h3><p>Wer ein leeres Glas sieht, hat unverzüglich Maßnahmen einzuleiten.</p></div></article>
+            <article class="law"><div class="law-no">§13</div><div><h3>Das Lagerfeuer hat Sitzungsrecht</h3><p>Sobald Feuer brennt, gilt die Runde als beschlussfähig.</p></div></article>
+            <article class="law"><div class="law-no">§14</div><div><h3>Beschlüsse gelten bis zur nächsten Runde</h3><p>Änderungen sind möglich, sofern die Mehrheit nickt.</p></div></article>
+            <article class="law"><div class="law-no">§15</div><div><h3>Kira kontrolliert den Amtsbereich</h3><p>Jeder Besucher wird geprüft. Leckerlis beschleunigen Verfahren.</p></div></article>
+            <article class="law"><div class="law-no">§16</div><div><h3>Nachschub ist Chefsache</h3><p>Bei Engpässen tritt der Beschaffungsrat unverzüglich zusammen.</p></div></article>
+            <article class="law"><div class="law-no">§17</div><div><h3>Wer lacht, stimmt zu</h3><p>Bei unklaren Abstimmungen gilt sichtbare Heiterkeit als Zustimmung.</p></div></article>
+            <article class="law"><div class="law-no">§18</div><div><h3>Regen aktiviert den Veranda-Schutz</h3><p>Bei schlechtem Wetter verlagert sich die Sitzung unter Dach.</p></div></article>
+            <article class="law"><div class="law-no">§19</div><div><h3>Der alte Mann wird angehört</h3><p>Rolands Rat ist nicht immer verbindlich, aber meistens nicht verkehrt.</p></div></article>
+            <article class="law"><div class="law-no">§20</div><div><h3>Prost ist Amtsdeutsch</h3><p>Ein ehrliches Prost ersetzt lange Reden und beendet unnötige Tagesordnungspunkte.</p></div></article>
           </div>
         </div>
       </div>
@@ -738,6 +824,69 @@
 
         <div class="stamp">
           <strong>Amtlicher Hinweis:</strong> Der Getränkestand ist regelmäßig zu prüfen. Bei niedrigem Bestand ist unverzüglich der zuständige Beschaffungsrat zu informieren.
+        </div>
+      </div>
+    </section>
+
+
+    <section class="extra-section dark" id="getraenkestand">
+      <div class="container">
+        <h2>Getränkestand-Anzeige</h2>
+        <p class="extra-subtitle">Amtlich geschätzter Versorgungsstatus. Angaben ohne Gewähr, aber mit hoher Dringlichkeit.</p>
+        <div class="status-grid">
+          <article class="status-card"><div class="status-icon">🍺</div><h3>Bier</h3><div class="status-bar"><span style="width:38%"></span></div><p>Kritisch – Nachschub empfohlen.</p></article>
+          <article class="status-card"><div class="status-icon">🥃</div><h3>Obstler / Williams</h3><div class="status-bar"><span style="width:72%"></span></div><p>Stabil – für Beschlüsse geeignet.</p></article>
+          <article class="status-card"><div class="status-icon">🍷</div><h3>Wein</h3><div class="status-bar"><span style="width:61%"></span></div><p>Ausreichend – diplomatisch verwendbar.</p></article>
+          <article class="status-card"><div class="status-icon">🔥</div><h3>Feuerholz</h3><div class="status-bar"><span style="width:84%"></span></div><p>Sitzungsfähig – Lagerfeuer genehmigt.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="protokolle">
+      <div class="container">
+        <h2>Protokoll vergangener Sitzungen</h2>
+        <p class="extra-subtitle">Auszüge aus dem Archiv. Lücken im Protokoll sind kein Fehler, sondern gelebte Tradition.</p>
+        <div class="protocol-grid">
+          <article class="protocol-card"><span class="protocol-meta">Sitzung 01</span><h3>Problem: Bier warm</h3><p>Lösung: Neues Bier kaltgestellt. Ergebnis: Problem vollständig vertagt.</p></article>
+          <article class="protocol-card"><span class="protocol-meta">Sitzung 02</span><h3>Antrag: Grill früher anheizen</h3><p>Einstimmig angenommen. Gegenstimmen wurden wegen Hunger nicht berücksichtigt.</p></article>
+          <article class="protocol-card"><span class="protocol-meta">Sitzung 03</span><h3>Veranda bleibt Regierungssitz</h3><p>Begründung: Überdacht, gemütlich und strategisch nah an der Getränkekammer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="bekanntmachungen">
+      <div class="container">
+        <h2>Amtliche Bekanntmachungen</h2>
+        <p class="extra-subtitle">Für Bürger, Gäste, Ratsmitglieder und alle, die zufällig gerade da sind.</p>
+        <div class="info-grid">
+          <article class="info-card notice-card"><h3>Bekanntmachung I</h3><p>Bei sichtbarer Glut ist das Betreten des Sitzungsbereichs nur mit guter Laune gestattet.</p></article>
+          <article class="info-card notice-card"><h3>Bekanntmachung II</h3><p>Leere Flaschen sind dem zuständigen Entsorgungs- oder Nachschubbeauftragten zu melden.</p></article>
+          <article class="info-card notice-card"><h3>Bekanntmachung III</h3><p>Die Veranda gilt bis auf Widerruf als offizieller Regierungssitz des Hirschbergs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="veranda-kodex">
+      <div class="container">
+        <h2>Der Veranda-Kodex</h2>
+        <p class="extra-subtitle">Grundregeln für respektvolles, würdiges und ausreichend versorgtes Zusammensein.</p>
+        <div class="info-grid">
+          <article class="info-card"><h3>I. Respekt</h3><p>Wer auf der Veranda sitzt, wird gehört – auch wenn nicht immer alles verstanden wird.</p></article>
+          <article class="info-card"><h3>II. Nachschub</h3><p>Wer das letzte nimmt, meldet es. Wer Nachschub bringt, steigt im Ansehen.</p></article>
+          <article class="info-card"><h3>III. Feuer</h3><p>Die Glut wird gepflegt. Wer Holz nachlegt, leistet aktiven Verwaltungsdienst.</p></article>
+        </div>
+        <div class="seal-note"><strong>Amtlicher Zusatz:</strong> Aufräumen ist grundsätzlich vorgesehen und wird nach Möglichkeit nicht auf die nächste Generation übertragen.</div>
+      </div>
+    </section>
+
+    <section class="extra-section" id="notfallplan">
+      <div class="container">
+        <h2>Notfallplan</h2>
+        <p class="extra-subtitle">Für besondere Lagen mit erhöhter Dringlichkeit.</p>
+        <div class="info-grid">
+          <article class="info-card"><h3>Biermangel</h3><p>Sofortige Beschaffung einleiten. Zuständigkeit: jeder mit Fahrzeug, Zeit oder schlechtem Gewissen.</p></article>
+          <article class="info-card"><h3>Regen</h3><p>Veranda aktivieren, Sitzplätze sichern, wichtige Getränke aus dem Gefahrenbereich entfernen.</p></article>
+          <article class="info-card"><h3>Diskussion eskaliert</h3><p>Feuer nachlegen, Runde nachfüllen, Tagesordnung vertagen.</p></article>
         </div>
       </div>
     </section>
