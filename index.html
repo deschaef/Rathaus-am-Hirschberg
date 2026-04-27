@@ -7,6 +7,7 @@
   <meta name="description" content="Die offizielle, inoffizielle Webseite des Rathaus am Hirschberg – Schützenheim. Seriös im Auftritt, lustig im Betrieb." />
   <link rel="preload" as="image" href="betrieb-rathaus-hirschberg.webp" type="image/webp" />
   <link rel="icon" href="logo-rathaus-hirschberg.webp" type="image/webp" />
+  <link rel="preload" as="image" href="header-rathaus-hirschberg.png" type="image/png" />
 
   <style>
     :root{
@@ -735,16 +736,103 @@
       display:block;
     }
 
-  </style>
+  
+/* Smartphone Header mittig anzeigen */
+.mobile-title{
+  display:none;
+  font-weight:bold;
+  color:var(--green);
+  text-align:center;
+  flex:1;
+  font-size:.9rem;
+  letter-spacing:.08em;
+}
+
+@media(max-width:900px){
+  .brand-title{
+    display:none;
+  }
+  .mobile-title{
+    display:block;
+  }
+}
+
+
+/* Prunkvoller Header-Titel als Bild */
+.header-banner{
+  display:block;
+  height:78px;
+  width:auto;
+  max-width:min(760px,58vw);
+  object-fit:contain;
+  margin:0 auto;
+  flex:1 1 auto;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.08));
+}
+
+.brand{
+  flex:0 0 auto;
+}
+
+.brand img{
+  width:76px;
+}
+
+.nav{
+  min-height:92px;
+}
+
+.brand-title,
+.mobile-title{
+  display:none !important;
+}
+
+@media(max-width:1320px){
+  .header-banner{
+    max-width:min(640px,58vw);
+    height:68px;
+  }
+}
+
+@media(max-width:700px){
+  .nav{
+    min-height:74px;
+    gap:8px;
+    padding:8px 10px;
+  }
+  .brand img{
+    width:56px !important;
+  }
+  .header-banner{
+    height:46px;
+    max-width:calc(100vw - 150px);
+  }
+  .hamburger{
+    padding:7px 9px !important;
+    font-size:.72rem !important;
+  }
+}
+
+@media(max-width:390px){
+  .brand img{
+    width:50px !important;
+  }
+  .header-banner{
+    height:40px;
+    max-width:calc(100vw - 132px);
+  }
+}
+
+</style>
 </head>
 
 <body>
   <header class="topbar">
     <nav class="nav">
       <a class="brand" href="#home" aria-label="Zur Startseite">
-        <img src="logo-rathaus-hirschberg.webp" alt="Logo Rathaus am Hirschberg">
-        <span class="brand-title">Rathaus am Hirschberg <small>Schützenheim</small></span>
-      </a>
+        <img src="logo-rathaus-hirschberg.webp" alt="Logo Rathaus am Hirschberg"></a>
+
+      <img class="header-banner" src="header-rathaus-hirschberg.png" alt="Rathaus am Hirschberg Schützenheim">
 
       <div class="links">
         <a href="#rathaus">Das Rathaus</a>
